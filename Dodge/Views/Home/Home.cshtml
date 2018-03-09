@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewData["Title"] = "Home";
+}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+<link href="~/css/home.css" rel="stylesheet" />
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+@if (Session.isSingin == false)
+{
+    <h2>SORRY ! <i class="far fa-frown"></i></h2>
+    <h3>You doesn't have permissions <i class="fas fa-lock"></i></h3>
+
+}
+else
+{
+    <!------ Include the above in your HEAD tag ---------->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 col-md-3">
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                    <span class="fas fa-cogs">
+                                    </span> Settings
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                            <ul class="list-group">
+                                @if (Session.isAdmin == true)
+                                {
+                                    <li class="list-group-item"><span class="fas fa-user text-success"></span><a asp-area="" asp-controller="Users" asp-action="Index"> Users</a></li>
+                                    <li class="list-group-item"><span class="fas fa-users text-success"></span><a asp-area="" asp-controller="Clients" asp-action="Index"> Clients</a></li>
+                                    <li class="list-group-item"><span class="far fa-calendar-alt text-success"></span><a asp-area="" asp-controller="Meetings" asp-action="Index"> Meetings</a></li>
+                                    <li class="list-group-item"><span class="fas fa-clipboard-list text-success"></span><a asp-area="" asp-controller="Contacts" asp-action="Index"> Contacts</a></li>
+                                    <li class="list-group-item"> <span class="far fa-question-circle text-success"></span><a asp-area="" asp-controller="SupportTickets" asp-action="Index"> Support Tickets</a></li>
+                                }
+                                else
+                                {
+                                    <li class="list-group-item"><span class="fas fa-users text-success"></span><a asp-area="" asp-controller="Clients" asp-action="Index"> Clients</a></li>
+                                    <li class="list-group-item"><span class="far fa-calendar-alt text-success"></span><a asp-area="" asp-controller="Meetings" asp-action="Index"> Meetings</a></li>
+                                    <li class="list-group-item"><span class="fas fa-clipboard-list text-success"></span><a asp-area="" asp-controller="Contacts" asp-action="Index"> Contacts</a></li>
+                                    <li class="list-group-item"> <span class="far fa-question-circle text-success"></span><a asp-area="" asp-controller="SupportTickets" asp-action="Index"> Support Tickets</a></li>
+                                }
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-9 col-md-9">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        @if (Session.isAdmin == true)
+                        {
+                            <h3 class="panel-title"><strong>ADMIN DASHBOARD</strong></h3>
+                        }
+                        else
+                        {
+                            <h3 class="panel-title"><strong>EMPLOYEE DASHBOARD</strong></h3>
+                        }
+
+
+                    </div>
+                    <div class="panel-body">
+                        <div class="alert alert-success"><h3><i class="fab fa-gripfire"></i> Welcome! @Session.user</h3></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+
+

@@ -1,0 +1,75 @@
+﻿@model Dodge.Models.Client
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+<link href="~/css/forms.css" rel="stylesheet" />
+
+@if (Session.isSingin == false)
+{
+    <h2>SORRY ! <i class="far fa-frown"></i></h2>
+    <h3>You doesn't have permissions <i class="fas fa-lock"></i></h3>
+
+}
+else
+{  
+    <h4>Edit Client</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-6 col-lg-offset-3 text-center">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="id" />
+                <div class="form-group">
+                    <label asp-for="name" class="control-label"></label>
+                    <input asp-for="name" class="form-control" />
+                    <span asp-validation-for="name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="identityCard" class="control-label"></label>
+                    <input type="number" asp-for="identityCard" class="form-control" />
+                    <span asp-validation-for="identityCard" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="webPage" class="control-label"></label>
+                    <input type="url" asp-for="webPage" class="form-control" />
+                    <span asp-validation-for="webPage" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="address" class="control-label"></label>
+                    <textarea asp-for="address" class="form-control"></textarea>
+                    <span asp-validation-for="address" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="phone" class="control-label"></label>
+                    <input type="tel" asp-for="phone" class="form-control" />
+                    <span asp-validation-for="phone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="sectors" class="control-label"></label>
+                    <select asp-for="sectors" class="form-control">
+                        <option selected disabled>-- Choose Option --</option>
+                        <option>Education</option>
+                        <option>Industry</option>
+                        <option>Farming</option>
+                        <option>Manufacture</option>
+                        <option>Services</option>
+                        <option>Others</option>
+                    </select>
+                    <span asp-validation-for="sectors" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-success btn-block" />
+                    <a class="btn btn-danger btn-block" asp-action="Index">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+}

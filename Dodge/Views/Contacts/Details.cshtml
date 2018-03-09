@@ -1,0 +1,64 @@
+﻿@model Dodge.Models.Contact
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+
+@if (Session.isSingin == false)
+{
+    <h2>SORRY ! <i class="far fa-frown"></i></h2>
+    <h3>You doesn't have permissions <i class="fas fa-lock"></i></h3>
+
+}
+else
+{
+    <div>
+        <h4> Details of Contact</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.lastName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.lastName)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.email)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.email)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.phone)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.phone)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.jobPositions)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.jobPositions)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.client)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.client.identityCard) -
+                @Html.DisplayFor(model => model.client.name)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a class="btn btn-default" asp-action="Edit" asp-route-id="@Model.id">Edit</a>
+        <a class="btn btn-danger" asp-action="Index">Cancel</a>
+    </div>
+}

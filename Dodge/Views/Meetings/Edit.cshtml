@@ -1,0 +1,59 @@
+﻿@model Dodge.Models.Meetings
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+<link href="~/css/forms.css" rel="stylesheet" />
+
+@if (Session.isSingin == false)
+{
+    <h2>SORRY ! <i class="far fa-frown"></i></h2>
+    <h3>You doesn't have permissions <i class="fas fa-lock"></i></h3>
+
+}
+else
+{
+  
+    <h4>Edit Meeting</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-6 col-lg-offset-3 text-center">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="id" />
+                <div class="form-group">
+                    <label asp-for="subject" class="control-label"></label>
+                    <input asp-for="subject" class="form-control" />
+                    <span asp-validation-for="subject" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="date" class="control-label"></label>
+                    <input asp-for="date" class="form-control" />
+                    <span asp-validation-for="date" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UserId" class="control-label"></label>
+                    <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></select>
+                    <span asp-validation-for="UserId" class="text-danger"></span>
+                </div>
+                <div class="form-group text-left">
+                    <div class="checkbox">
+                        <label>
+                            <input asp-for="AVirtual" /> @Html.DisplayNameFor(model => model.AVirtual)
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ClientId" class="control-label"></label>
+                    <select asp-for="ClientId" class="form-control" asp-items="ViewBag.ClientId"></select>
+                    <span asp-validation-for="ClientId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-success btn-block" />
+                    <a class="btn btn-danger btn-block" asp-action="Index">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+}

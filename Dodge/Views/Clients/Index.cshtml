@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Dodge.Models.Client>
+
+
+@{
+    ViewData["Title"] = "Clients";
+}
+
+<link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+
+@if (Session.isSingin == false)
+{
+    <h2>SORRY ! <i class="far fa-frown"></i></h2>
+    <h3>You doesn't have permissions <i class="fas fa-lock"></i></h3>
+
+}
+else
+{
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+    <link href="~/css/table.css" rel="stylesheet" />
+
+    <h2>Customers</h2>
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Create New</a>
+    </p>
+    <div class="container">
+        <div class="row">
+            <div class="table-responsive">
+                <table id="main-table" class="table exotic-table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.identityCard)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.webPage)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.address)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.phone)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.sectors)
+                            </th>
+                            <th><em class="fa fa-cog"></em> Options</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.identityCard)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.webPage)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.address)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.phone)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.sectors)
+                                </td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-success"><em class="fas fa-pencil-alt"></em></a>
+                                    <a asp-action="Details" asp-route-id="@item.id" class="btn btn-primary"><em class="fas fa-eye"></em></a>
+                                    <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-danger"><em class="fas fa-trash-alt"></em></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+}
+
+

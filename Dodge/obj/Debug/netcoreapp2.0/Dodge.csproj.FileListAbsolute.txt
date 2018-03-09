@@ -1,0 +1,11 @@
+C:\Users\JRamírez\source\repos\Dodge\Dodge\bin\Debug\netcoreapp2.0\Dodge.deps.json
+C:\Users\JRamírez\source\repos\Dodge\Dodge\bin\Debug\netcoreapp2.0\Dodge.runtimeconfig.json
+C:\Users\JRamírez\source\repos\Dodge\Dodge\bin\Debug\netcoreapp2.0\Dodge.runtimeconfig.dev.json
+C:\Users\JRamírez\source\repos\Dodge\Dodge\bin\Debug\netcoreapp2.0\Dodge.dll
+C:\Users\JRamírez\source\repos\Dodge\Dodge\obj\Debug\netcoreapp2.0\Dodge.csprojResolveAssemblyReference.cache
+C:\Users\JRamírez\source\repos\Dodge\Dodge\obj\Debug\netcoreapp2.0\Dodge.csproj.CoreCompileInputs.cache
+C:\Users\JRamírez\source\repos\Dodge\Dodge\obj\Debug\netcoreapp2.0\Dodge.AssemblyInfoInputs.cache
+C:\Users\JRamírez\source\repos\Dodge\Dodge\obj\Debug\netcoreapp2.0\Dodge.AssemblyInfo.cs
+C:\Users\JRamírez\source\repos\Dodge\Dodge\bin\Debug\netcoreapp2.0\Dodge.pdb
+C:\Users\JRamírez\source\repos\Dodge\Dodge\obj\Debug\netcoreapp2.0\Dodge.dll
+C:\Users\JRamírez\source\repos\Dodge\Dodge\obj\Debug\netcoreapp2.0\Dodge.pdb

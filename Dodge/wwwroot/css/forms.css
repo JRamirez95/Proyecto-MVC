@@ -1,0 +1,9 @@
+﻿form {
+    color: #5d5d5d;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 26px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    color: white;
+}

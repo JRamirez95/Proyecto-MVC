@@ -1,0 +1,53 @@
+﻿body {
+    background-image: url("../images/b.png");
+    font-family: sans-serif;
+    color: white;
+    padding: 5%;
+}
+
+.table > thead > tr > th {
+    border-bottom: none;
+}
+
+.exotic-table {
+    color: white;
+    background-color: gray;
+    text-align: center;
+    border: none;
+}
+
+    .exotic-table thead tr {
+        border: none;
+        text-align: center;
+    }
+
+    .exotic-table thead > tr > th {
+        text-align: center;
+    }
+
+    .exotic-table tbody {
+        border: none;
+        border-top: none
+    }
+
+        .exotic-table tbody tr {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+            .exotic-table tbody tr:hover {
+                box-shadow: 0 0 20px #000;
+                background: #1a1a1a;
+            }
+
+            .exotic-table tbody tr td {
+                border-bottom: none;
+            }
+
+.table-responsive {
+    border: none;
+}
+
+
+
+
+
